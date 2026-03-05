@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Red Bull Racing",
+    "driver": "Sergio Perez",
+    "country": "Austria",
+    "points": 950,
+    "championships": 6
+  },
+  {
+    "id": 2,
+    "name": "Ferrari",
+    "driver": "Charles Leclerc",
+    "country": "Italy",
+    "points": 652,
+    "championships": 16
+  },
+  {
+    "id": 3,
+    "name": "Mercedes",
+    "driver": "Lewis Hamilton",
+    "country": "Germany",
+    "points": 409,
+    "championships": 8
+  },
+  {
+    "id": 4,
+    "name": "McLaren",
+    "driver": "Lando Norris",
+    "country": "United Kingdom",
+    "points": 302,
+    "championships": 8
+  },
+  {
+    "id": 6,
+    "name": "Alpine",
+    "driver": "Esteban Ocon",
+    "country": "France",
+    "points": 120,
+    "championships": 0
+  },
+  {
+    "id": 7,
+    "name": "Cadillac",
+    "driver": "Perez",
+    "country": "USA",
+    "points": 0,
+    "championships": 0
+  }
+]

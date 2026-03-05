@@ -1,0 +1,318 @@
+{
+  "info": {
+    "_postman_id": "b893b35a-13e7-478f-b7ec-f5950a7eca6a",
+    "name": "F1 Teams API",
+    "description": "Colectie Postman pentru API-ul RESTful de echipe Formula 1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52939896",
+    "_collection_link": "https://go.postman.co/collection/52939896-b893b35a-13e7-478f-b7ec-f5950a7eca6a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET",
+      "item": [
+        {
+          "name": "GET all teams",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/teams",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams"
+              ]
+            },
+            "description": "Returneaza toate echipele F1 din baza de date."
+          },
+          "response": []
+        },
+        {
+          "name": "GET team by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/teams/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "1"
+              ]
+            },
+            "description": "Returneaza o singura echipa dupa ID."
+          },
+          "response": []
+        },
+        {
+          "name": "GET team by ID - Not Found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/teams/999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "999"
+              ]
+            },
+            "description": "Exemplu de 404 Not Found - ID inexistent."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "POST",
+      "item": [
+        {
+          "name": "POST create team",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alpine\",\n  \"driver\": \"Esteban Ocon\",\n  \"country\": \"France\",\n  \"points\": 120,\n  \"championships\": 0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams"
+              ]
+            },
+            "description": "Adauga o echipa noua. Returneaza 201 Created."
+          },
+          "response": []
+        },
+        {
+          "name": "POST create team - Conflict",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ferrari\",\n  \"driver\": \"Carlos Sainz\",\n  \"country\": \"Italy\",\n  \"points\": 500,\n  \"championships\": 16\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams"
+              ]
+            },
+            "description": "Incearca sa adauge o echipa care exista deja. Returneaza 409 Conflict."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PUT",
+      "item": [
+        {
+          "name": "PUT replace team",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Red Bull Racing\",\n  \"driver\": \"Sergio Perez\",\n  \"country\": \"Austria\",\n  \"points\": 285,\n  \"championships\": 6\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "1"
+              ]
+            },
+            "description": "Inlocuieste complet echipa cu ID 1. Returneaza 200 OK."
+          },
+          "response": []
+        },
+        {
+          "name": "PUT replace team - Not Found",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ghost Team\",\n  \"driver\": \"Nobody\",\n  \"country\": \"Nowhere\",\n  \"points\": 0,\n  \"championships\": 0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams/999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "999"
+              ]
+            },
+            "description": "Incearca sa inlocuiasca o echipa inexistenta. Returneaza 404 Not Found."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PATCH",
+      "item": [
+        {
+          "name": "PATCH update points",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"points\": 950\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "1"
+              ]
+            },
+            "description": "Modifica partial echipa cu ID 1 (doar punctele). Returneaza 200 OK."
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH update driver",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"driver\": \"George Russell\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/teams/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "3"
+              ]
+            },
+            "description": "Modifica partial echipa cu ID 3 (doar pilotul). Returneaza 200 OK."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DELETE",
+      "item": [
+        {
+          "name": "DELETE team by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/teams/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams",
+                "5"
+              ]
+            },
+            "description": "Sterge echipa cu ID 5. Returneaza 200 OK."
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE all teams",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/teams",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "teams"
+              ]
+            },
+            "description": "Sterge TOATE echipele din baza de date. Returneaza 200 OK."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
