@@ -5,7 +5,7 @@ import os
 #json pentru citire si scriere
 DATA_FILE = "teams.json"
 
-
+#functii helper pentru date
 def read_teams():
     #citire echipe din json
     if not os.path.exists(DATA_FILE):
@@ -37,6 +37,7 @@ class F1Handler(BaseHTTPRequestHandler):
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(body)))
+        #self.send_header("Access-Control-Allow-Origin", "*") pentru interf grafica web
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
         self.wfile.write(body)
@@ -232,9 +233,9 @@ if __name__ == "__main__":
     HOST = "localhost"
     PORT = 8000
     server = HTTPServer((HOST, PORT), F1Handler)
-    print(f"🏎️  F1 API pornit pe http://{HOST}:{PORT}")
-    print(f"    Incearca: http://{HOST}:{PORT}/teams")
-    print(f"    Apasa CTRL+C pentru a opri serverul.\n")
+    print(f"F1 API pornit pe http://{HOST}:{PORT}")
+    print(f"Incearca: http://{HOST}:{PORT}/teams")
+    print(f"Apasa CTRL+C pentru a opri serverul.\n")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
