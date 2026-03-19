@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Bahrain Grand Prix",
+    "circuit": "Bahrain International Circuit",
+    "country": "Bahrain",
+    "date": "2024-03-02",
+    "laps": 57,
+    "winner": "Max Verstappen"
+  },
+  {
+    "id": 3,
+    "name": "Australian Grand Prix",
+    "circuit": "Albert Park Circuit",
+    "country": "Australia",
+    "date": "2024-03-24",
+    "laps": 58,
+    "winner": "Carlos Sainz"
+  },
+  {
+    "id": 5,
+    "name": "Chinese Grand Prix",
+    "circuit": "Shanghai International Circuit",
+    "country": "China",
+    "date": "2024-04-21",
+    "laps": 56,
+    "winner": "Max Verstappen"
+  },
+  {
+    "id": 6,
+    "name": "Miami Grand Prix",
+    "circuit": "Miami International Autodrome",
+    "country": "SUA",
+    "date": "2024-05-05",
+    "laps": 57,
+    "winner": "Lando Norris"
+  },
+  {
+    "id": 7,
+    "name": "Monaco Grand Prix",
+    "circuit": "Circuit de Monaco",
+    "country": "Monaco",
+    "date": "2024-05-26",
+    "laps": 78,
+    "winner": "Charles Leclerc"
+  },
+  {
+    "id": 8,
+    "name": "British Grand Prix",
+    "circuit": "Silverstone Circuit",
+    "country": "Marea Britanie",
+    "date": "2024-07-07",
+    "laps": 52,
+    "winner": "Lewis Hamilton"
+  },
+  {
+    "id": 9,
+    "name": "Japanese GP",
+    "circuit": "Suzuka Circuit",
+    "country": "Japan",
+    "date": "2026-03-26",
+    "laps": 82,
+    "winner": "George Russell"
+  }
+]
